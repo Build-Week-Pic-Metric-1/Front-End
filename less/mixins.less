@@ -29,6 +29,7 @@
     text-align: center;
     border-radius: 10px;
     margin-top: 2%;
+    cursor: pointer;
     &:hover {
         background-color: @dark-bg-color;
     }
@@ -37,4 +38,10 @@
     &:hover {
         color: @highlight-color;
     }
+}
+.navAnchor(@fontSize) {
+    text-decoration: none;
+    color: white;
+    font-size: @fontSize;
+    .navHover();
 }
