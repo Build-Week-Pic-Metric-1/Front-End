@@ -131,18 +131,7 @@ header {
             margin: 2% 0;
         }
         .button {
-            font-size: 2.5rem;
-            background-color: @highlight-color;
-            border: 3px solid @highlight-color;
-            color: white;
-            width: 15%;
-            padding: 2%;
-            text-align: center;
-            border-radius: 10px;
-            margin-top: 2%;
-            &:hover {
-                background-color: @dark-bg-color;
-            }
+            .signUpButton(15%);
         }
     }
 }//header
@@ -176,6 +165,38 @@ header {
         }
         p {
             font-size: 1.8rem;
+            line-height: 1.5;
         }
     }
 }//.features
+
+.about {
+    .displayFlex(center);
+    height: 60vh;
+    div {
+        width: 40%;
+        .displayFlex(center, column);
+        h4 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h2 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 2% 0;
+        }
+        p {
+            font-size: 1.8rem;
+            margin: 2% 0;
+            line-height: 2;
+        }
+        .button {
+            .signUpButton(30%);
+        }
+    }
+    div {
+        width: 40%;
+    }
+}
