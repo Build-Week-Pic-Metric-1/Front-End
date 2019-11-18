@@ -172,3 +172,37 @@ html {
   color: white;
   font-size: 1.5rem;
 }
+footer {
+  margin-left: 5%;
+}
+header {
+  margin-left: 5%;
+  background-color: #330066;
+  display: flex;
+  width: 95%;
+  flex-wrap: wrap;
+}
+header .gallery {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header .gallery #pic1 {
+  width: 32%;
+  background-image: url("Font-End/img/surfer-walking-on-beach.jpg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header .gallery #pic2 {
+  width: 32%;
+  background-image: url("Front-End/img/man-holding-up-bolder.jpg");
+}
+header .gallery #pic3 {
+  width: 32%;
+  background-image: url("Front-End/img/asian-mother.jpg");
+}
+.features {
+  margin-left: 5%;
+}
