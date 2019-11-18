@@ -1,3 +1,22 @@
 footer {
     margin-left: 5%;
+    background-color: @dark-bg-color;
+    color: white;
+    .displayFlex(space-around);
+    align-items: center;
+    padding: 1%;
+    p {
+        width: 20%;
+    }
+    .logo {
+        width: 15%;
+    }
+    .footer-links {
+        .displayFlex(flex-end);
+        width: 20%;
+        button {
+            .navIconButton();
+            margin: 0 4%;
+        }
+    }
 }
