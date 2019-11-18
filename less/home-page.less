@@ -1,29 +1,149 @@
 header {
     margin-left: 5%;
+    height: 100vh;
     background-color: @dark-bg-color;
     display: flex;
-    width: 95%;
+    width: 100%;
     flex-wrap: wrap;
     .gallery {       
         width: 100%;
+        height: 100%;
         .displayFlex(space-between);
         flex-wrap: wrap;
+        align-content: space-between;
         #pic1 {
             width: 32%;
+            height: 24%;
             background-image: @pic1;
             background-color: white;
             background-repeat: no-repeat;
             background-position: center;
+            background-size: 125% 200%;
         }
         #pic2 {
-            width: 32%;
+            width: 33%;
+            height: 24%;
+            margin: 0 1.5%;
             background-image: @pic2;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
         }
         #pic3 {
             width: 32%;
+            height: 24%;
             background-image: @pic3;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 150%;
+        }
+        #pic4 {
+            width: 32%;
+            height: 33%;
+            background-image: @pic4;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 250%;
+        }
+        #pic5 {
+            width: 33%;
+            height: 33%;
+            margin: 0 1.5%;
+            background-image: @pic5;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 250%;
+        }
+        #pic6 {
+            width: 32%;
+            height: 33%;
+            background-image: @pic6;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+        }
+        #pic7 {
+            width: 40%;
+            height: 29%;
+            background-image: @pic7;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 150%;
+        }
+        #pic8 {
+            width: 58.5%;
+            height: 29%;
+            background-image: @pic8;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 250%;
+        }
+        #pic9 {
+            width: 32%;
+            height: 9%;
+            background-image: @pic9;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 300%;
+        }
+        #pic10 {
+            width: 33%;
+            height: 9%;
+            margin: 0 1.5%;
+            background-image: @pic10;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 350%;
+        }
+        #pic11 {
+            width: 32%;
+            height: 9%;
+            background-image: @pic11;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 350%;
         }
     }//.gallery
+    .banner {
+        margin-top: -100vh;
+        width: 100%;
+        padding-left: 5%;
+        background-color: @light-bg-opacity;
+        .displayFlex(center, column);
+        img {
+            width: 60%;
+        }
+        h2 {
+            font-size: 4rem;
+            color: white;
+            span {
+                color: @highlight-color;
+            }
+            margin: 2% 0;
+        }
+        .button {
+            font-size: 2.5rem;
+            background-color: @highlight-color;
+            border: 3px solid @highlight-color;
+            color: white;
+            width: 15%;
+            padding: 2%;
+            text-align: center;
+            border-radius: 10px;
+            &:hover {
+                background-color: @dark-bg-color;
+            }
+        }
+    }
 }//header
 .features {
     margin-left: 5%;
