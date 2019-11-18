@@ -1,0 +1,35 @@
+.sidebar {
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: @dark-bg-color;
+    .displayFlex(space-between, column);
+    align-items: center;
+    border-right: 3px solid @highlight-color;
+    .logo {
+        padding: 20% 10%;
+    }
+    button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 2.5rem;
+    }
+    #hamburger {
+        transform: scale(1.75,1); //stretch icon to make it wider.
+    }
+    .links {
+        padding: 20% 10%;
+        height: 20%;
+        .displayFlex(space-between, column);
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+    }
+}
