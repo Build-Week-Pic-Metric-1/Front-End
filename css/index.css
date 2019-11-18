@@ -321,10 +321,44 @@ header .banner .button {
   padding: 2%;
   text-align: center;
   border-radius: 10px;
+  margin-top: 2%;
 }
 header .banner .button:hover {
   background-color: #330066;
 }
 .features {
   margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+}
+.features .card {
+  width: 33.33%;
+  text-align: center;
+  color: white;
+  padding: 5%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.features .card:nth-child(1) {
+  background-color: #330066;
+}
+.features .card:nth-child(2) {
+  background-color: #6633cc;
+}
+.features .card:nth-child(3) {
+  background-color: #ff0033;
+}
+.features .card h3 {
+  font-size: 4rem;
+}
+.features .card h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.features .card p {
+  font-size: 1.8rem;
 }

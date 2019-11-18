@@ -139,6 +139,7 @@ header {
             padding: 2%;
             text-align: center;
             border-radius: 10px;
+            margin-top: 2%;
             &:hover {
                 background-color: @dark-bg-color;
             }
@@ -147,4 +148,34 @@ header {
 }//header
 .features {
     margin-left: 5%;
+    .displayFlex(center);
+    height: 60vh;
+    .card {
+        width: 33.33%;
+        text-align: center;
+        color: white;
+        padding: 5%;
+        .displayFlex(space-around, column);
+        &:nth-child(1) {
+            background-color: @dark-bg-color;
+        }
+        &:nth-child(2) {
+            background-color: @light-bg-color;
+        }
+        &:nth-child(3) {
+            background-color: @highlight-color;
+        }
+        h3 {
+            font-size: 4rem;
+        }
+        h4 {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 1.8rem;
+        }
+    }
 }//.features
