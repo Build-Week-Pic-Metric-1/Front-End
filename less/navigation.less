@@ -13,14 +13,13 @@
     .logo {
         padding: 20% 10%;
     }
-    button {
-        .navIconButton();
-        a {
-            .navAnchor(2.5rem);
-        }
-    }
     #hamburger {
         transform: scale(1.75,1); //stretch icon to make it wider.
+        .navIconButton();
+        .navHover();
+        &:focus {
+            outline: none;
+        }
     }
     .links {
         padding: 20% 10%;
@@ -35,5 +34,20 @@
         a {
             .navAnchor(1.6rem);
         }
+    }
+}
+.expanded-sidebar {
+    height: 100%;
+    width: 30%;
+    background-color: @dark-bg-opacity;
+    position: fixed;
+    left: 5%;
+    .displayFlex(center, column);
+    align-items: flex-start;
+    padding: 8%;
+    display: none;
+    a {
+        .navAnchor(4rem);
+        margin: 5% 0;
     }
 }

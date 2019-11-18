@@ -166,22 +166,18 @@ html {
 .sidebar .logo {
   padding: 20% 10%;
 }
-.sidebar button {
+.sidebar #hamburger {
+  transform: scale(1.75, 1);
   background-color: transparent;
   color: white;
   border: none;
   font-size: 2.5rem;
 }
-.sidebar button a {
-  text-decoration: none;
-  color: white;
-  font-size: 2.5rem;
-}
-.sidebar button a:hover {
+.sidebar #hamburger:hover {
   color: #ff0033;
 }
-.sidebar #hamburger {
-  transform: scale(1.75, 1);
+.sidebar #hamburger:focus {
+  outline: none;
 }
 .sidebar .links {
   padding: 20% 10%;
@@ -210,6 +206,28 @@ html {
   font-size: 1.6rem;
 }
 .sidebar .links a:hover {
+  color: #ff0033;
+}
+.expanded-sidebar {
+  height: 100%;
+  width: 30%;
+  background-color: rgba(51, 0, 102, 0.9);
+  position: fixed;
+  left: 5%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8%;
+  display: none;
+}
+.expanded-sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 4rem;
+  margin: 5% 0;
+}
+.expanded-sidebar a:hover {
   color: #ff0033;
 }
 footer {
