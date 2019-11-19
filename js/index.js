@@ -3,6 +3,7 @@ const expandedMenu = document.querySelector(".expanded-sidebar");
 let expanded = false;
 const mobile = window.matchMedia("(max-width: 500px)");
 const tablet = window.matchMedia("(max-width: 800px)");
+const smallMonitor = window.matchMedia("(max-width: 1550px)");
 
 if (tablet.matches) {
     expandedMenu.style.width = "30%"; //change default value of width on smaller screens.
@@ -20,7 +21,11 @@ hamBtn.addEventListener("click", function(event) {
         if (tablet.matches) {
             expandedMenu.style.height = "300px";
         } else {
-            expandedMenu.style.width = "20%";
+            if (smallMonitor.matches) {
+                expandedMenu.style.width = "30%";
+            } else {
+                expandedMenu.style.width = "20%";
+            }
         }
     } else {
         hamBtn.innerHTML = '<i class="fas fa-bars"></i>';
