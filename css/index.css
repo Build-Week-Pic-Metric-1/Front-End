@@ -275,7 +275,7 @@ html {
   color: white;
   font-size: 4rem;
   margin: 5% 4vw;
-  min-width: 175px;
+  min-width: 190px;
 }
 .expanded-sidebar a:hover {
   color: #ff0033;
@@ -743,7 +743,7 @@ header .banner .button:hover {
 .team {
   margin-left: 5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 5%;
 }
@@ -756,20 +756,18 @@ header .banner .button:hover {
   margin: 5% 0;
 }
 .team .team-card {
-  width: 18%;
+  width: 300px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  margin: 2% 2%;
 }
 .team .team-card .team-member-pic {
   width: 100%;
   height: 400px;
-  background-image: url("D:/Lambda/Front-End/img/vince.jpg");
   background-color: white;
   background-repeat: no-repeat;
-  background-position: 58% 50%;
-  background-size: 250%;
   border-radius: 5px;
 }
 .team .team-card .team-member-info {
@@ -809,4 +807,29 @@ header .banner .button:hover {
 }
 .team .team-card .team-member-info p a:hover {
   color: #ff0033;
+}
+.team .team-member-1 .team-member-pic {
+  background-image: url("D:/Lambda/Front-End/img/vince.jpg");
+  background-position: 58% 50%;
+  background-size: 250%;
+}
+.team .team-member-2 .team-member-pic {
+  background-image: url("D:/Lambda/Front-End/img/samuel.jpg");
+  background-position: center;
+  background-size: 150%;
+}
+.team .team-member-3 .team-member-pic {
+  background-image: url("D:/Lambda/Front-End/img/cody.jpg");
+  background-position: 58% 50%;
+  background-size: 250%;
+}
+.team .team-member-4 .team-member-pic {
+  background-image: url("D:/Lambda/Front-End/img/ryan.jpg");
+  background-position: 45% 50%;
+  background-size: 150%;
+}
+.team .team-member-5 .team-member-pic {
+  background-image: url("D:/Lambda/Front-End/img/oscar.jpg");
+  background-position: center;
+  background-size: 145%;
 }
