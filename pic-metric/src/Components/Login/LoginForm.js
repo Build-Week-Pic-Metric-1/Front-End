@@ -76,10 +76,10 @@ export default function LoginForm() {
     return (
         <Form>
             <Label htmlFor="username">Username</Label>
-            <Input type="text" id="username" name="username" placeholder="Username" required/>
+            <Input type="text" id="username" name="username" placeholder="Username" required onChange={changeHandler}/>
 
             <Label htmlFor="password">Password</Label>
-            <Input type="password" id="password" name="password" placeholder="Password" required/>
+            <Input type="password" id="password" name="password" placeholder="Password" required onChange={changeHandler}/>
 
             <Button type="submit">Login</Button>
 
