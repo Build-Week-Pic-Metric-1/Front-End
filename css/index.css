@@ -210,22 +210,21 @@ html {
 }
 .expanded-sidebar {
   height: 100%;
-  width: 30%;
+  width: 0;
   background-color: rgba(51, 0, 102, 0.9);
   position: fixed;
   left: 5%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 8%;
-  display: none;
+  transition: 0.5s;
+  overflow-x: hidden;
 }
 .expanded-sidebar a {
   text-decoration: none;
   color: white;
   font-size: 4rem;
-  margin: 5% 0;
+  margin: 5% 5vw;
 }
 .expanded-sidebar a:hover {
   color: #ff0033;

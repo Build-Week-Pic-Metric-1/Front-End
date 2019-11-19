@@ -38,16 +38,15 @@
 }
 .expanded-sidebar {
     height: 100%;
-    width: 30%;
+    width: 0;
     background-color: @dark-bg-opacity;
     position: fixed;
     left: 5%;
     .displayFlex(center, column);
-    align-items: flex-start;
-    padding: 8%;
-    display: none;
+    transition: 0.5s;
+    overflow-x: hidden;
     a {
         .navAnchor(4rem);
-        margin: 5% 0;
+        margin: 5% 5vw;
     }
 }
