@@ -19,6 +19,14 @@ const NavCont = styled.div`
     align-items: center;
     justify-content: space-evenly
     width: 50%;
+
+    @media (min-width: 767px) {
+        width: 35%;
+    }
+
+    @media (min-width: 1199px) {
+        width: 20%;
+    }
 `
 
 const NavContR = styled.div`
