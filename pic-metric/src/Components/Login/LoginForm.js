@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
@@ -61,13 +61,25 @@ const Para = styled.p`
 
 export default function LoginForm() {
 
+    const [user, setUser] = useState("");
+    const [pass, setPass] = useState("");
+
+    const changeHandler = (e) => {
+        if(e.target.name === "username") {
+            setUser(e.target.value);
+        }
+        else {
+            setPass(e.target.value);
+        }
+    }
+
     return (
         <Form>
             <Label htmlFor="username">Username</Label>
-            <Input type="text" id="username" name="username" placeholder="Username"/>
+            <Input type="text" id="username" name="username" placeholder="Username" required/>
 
             <Label htmlFor="password">Password</Label>
-            <Input type="password" id="password" name="password" placeholder="Password"/>
+            <Input type="password" id="password" name="password" placeholder="Password" required/>
 
             <Button type="submit">Login</Button>
 

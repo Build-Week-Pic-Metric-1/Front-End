@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -68,16 +68,27 @@ const Button = styled.button`
 
 export default function Register() {
 
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const usernameHandler = (e) => {
+        setUsername(e.target.value);
+    }
+
+    const passwordHandler = (e) => {
+        setPassword(e.target.value);
+    }
+
     return (
         <Container>
             <Title>Sign Up</Title>
             
             <Form>
                 <Label htmlFor="username">Username</Label>
-                <Input type="text" id="username" name="username" placeholder="Username"/>
+                <Input type="text" id="username" name="username" placeholder="Username" required onChange={usernameHandler}/>
 
                 <Label htmlFor="password">Password</Label>
-                <Input type="password" id="password" name="password" placeholder="Password"/>
+                <Input type="password" id="password" name="password" placeholder="Password" required onChange={passwordHandler}/>
 
                 <Button type="submit">Sign Up</Button>
             </Form>
