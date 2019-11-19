@@ -5,6 +5,9 @@ header {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    @media @tablet {
+        margin-left: 0;
+    }
     .gallery {       
         width: 100%;
         height: 100%;
@@ -19,6 +22,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 200%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic2 {
             width: 33%;
@@ -28,6 +34,9 @@ header {
             background-color: white;
             background-repeat: no-repeat;
             background-position: center;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic3 {
             width: 32%;
@@ -37,6 +46,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic4 {
             width: 32%;
@@ -47,6 +59,9 @@ header {
             background-position: center;
             background-size: 150%;
             resize: both;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic5 {
             width: 33%;
@@ -57,6 +72,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic6 {
             width: 32%;
@@ -66,6 +84,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic7 {
             width: 40%;
@@ -75,6 +96,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic8 {
             width: 58.5%;
@@ -84,6 +108,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic9 {
             width: 32%;
@@ -93,6 +120,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 300%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic10 {
             width: 33%;
@@ -103,6 +133,9 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
         }
         #pic11 {
             width: 32%;
@@ -112,6 +145,22 @@ header {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 100%;
+            @media @tablet {
+                display: none;
+            }
+        }
+        #mobile-pic {
+            display: none;
+            @media @tablet {
+                display: flex;
+                width: 100%;
+                height: 100vh;
+                background-image: @mobile-banner-pic;
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+            }
         }
     }//.gallery
     .banner {
@@ -120,6 +169,9 @@ header {
         padding-left: 5%;
         background-color: @light-bg-opacity;
         .displayFlex(center, column);
+        @media @tablet {
+            padding: 0;
+        }
         img {
             width: 60%;
         }
@@ -133,6 +185,9 @@ header {
         }
         .button {
             .signUpButton(15%);
+            @media @tablet {
+                width: 25%;
+            }
         }
     }
 }//header
@@ -140,12 +195,21 @@ header {
     margin-left: 5%;
     .displayFlex(center);
     height: 60vh;
+    @media @tablet {
+        margin-left: 0;
+        flex-wrap: wrap;
+        height: auto;
+    }
     .card {
         width: 33.33%;
         text-align: center;
         color: white;
         padding: 5%;
         .displayFlex(space-around, column);
+        @media @tablet {
+           width: 100%;
+           height: 40vh;
+        }
         &:nth-child(1) {
             background-color: @dark-bg-color;
         }
@@ -174,9 +238,17 @@ header {
 .about {
     .displayFlex(center);
     height: 60vh;
+    @media @tablet {
+        height: auto;
+        flex-wrap: wrap-reverse;
+        padding: 5%;
+    }
     div {
         width: 40%;
         .displayFlex(center, column);
+        @media @tablet {
+            width: 100%;
+        }
         h4 {
             font-size: 2rem;
             text-transform: uppercase;
@@ -199,5 +271,9 @@ header {
     }
     div {
         width: 40%;
+        @media @tablet {
+            width: 100%;
+            margin-bottom: 5%;
+        }
     }
 }
