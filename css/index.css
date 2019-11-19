@@ -717,3 +717,96 @@ header .banner .button:hover {
     margin-bottom: 5%;
   }
 }
+.about-us-header {
+  height: 40vh;
+  background-image: url("D:/Lambda/Front-End/img/team-working.jpg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  min-height: 150px;
+}
+.about-us-header .about-us-banner {
+  width: 100%;
+  background-color: rgba(102, 51, 204, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.about-us-header .about-us-banner h1 {
+  font-size: 8rem;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 5%;
+  letter-spacing: 1rem;
+}
+.team {
+  margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5%;
+}
+.team h2 {
+  width: 100%;
+  font-size: 6rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1rem;
+  margin: 5% 0;
+}
+.team .team-card {
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.team .team-card .team-member-pic {
+  width: 100%;
+  height: 400px;
+  background-image: url("D:/Lambda/Front-End/img/vince.jpg");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 58% 50%;
+  background-size: 250%;
+  border-radius: 5px;
+}
+.team .team-card .team-member-info {
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  background: white;
+  margin-top: -50px;
+  border: 1px solid #330066;
+  border-radius: 5px;
+}
+.team .team-card .team-member-info h3 {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+.team .team-card .team-member-info h4 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #ff0033;
+  text-align: center;
+  margin: 1rem;
+  line-height: 1.25;
+}
+.team .team-card .team-member-info p {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 1rem;
+}
+.team .team-card .team-member-info p a {
+  text-decoration: none;
+  color: #330066;
+  font-size: 2.5rem;
+}
+.team .team-card .team-member-info p a:hover {
+  color: #ff0033;
+}
