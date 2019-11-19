@@ -46,6 +46,11 @@
         padding: 20% 10%;
         height: 20%;
         .displayFlex(space-between, column);
+        @media @short {
+            padding-top: 0;
+            padding-bottom: 20%;
+            min-height: 120px;
+        }
         @media @tablet {
             display: none;
         }
