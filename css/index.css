@@ -274,7 +274,8 @@ html {
   text-decoration: none;
   color: white;
   font-size: 4rem;
-  margin: 5% 5vw;
+  margin: 5% 4vw;
+  min-width: 175px;
 }
 .expanded-sidebar a:hover {
   color: #ff0033;
