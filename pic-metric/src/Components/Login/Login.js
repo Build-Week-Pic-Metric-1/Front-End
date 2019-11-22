@@ -13,18 +13,44 @@ const Container = styled.div`
     flex-direction: column;
 `
 
+const Nav = styled.nav`
+    width: 100%;
+    height: 10vh;
+    background-color: #330066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 const Title = styled.h2`
     color: white;
     text-decoration: underline;
     text-decoration-color: #ff0033;
 `
 
-export default function Login() {
+const Logo = styled.img`
+    height: 5vw;
+`
+
+const ImgCont = styled.div`
+    object-fit: contain;
+`
+
+
+
+export default function Login(props) {
 
     return (
+        <>
+        <Nav>
+          <ImgCont>
+            <Logo src={require("../../images/pic-metric-logo-gradient.png")} alt="logo" />
+          </ImgCont>
+        </Nav>
         <Container>
             <Title>Login</Title>
-            <LoginForm />
+            <LoginForm props={props}/>
         </Container>
+        </>
     )
 }

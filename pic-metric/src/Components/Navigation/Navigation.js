@@ -10,23 +10,16 @@ const Nav = styled.nav`
     background-color: #330066;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 `
 
 const NavCont = styled.div`
     margin: 0;
+    margin-left: -10%;
     display: flex;
     align-items: center;
     justify-content: space-evenly
-    width: 50%;
-
-    @media (min-width: 767px) {
-        width: 35%;
-    }
-
-    @media (min-width: 1199px) {
-        width: 20%;
-    }
+    width: 30%;
 `
 
 const NavContR = styled.div`
@@ -34,20 +27,34 @@ const NavContR = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 50%;
 `
 
-export default function Navigation() {
+const Logo = styled.img`
+    height: 5vw;
+`
+
+const ImgCont = styled.div`
+    margin-left: -15%;
+    object-fit: contain;
+    align-self: center;
+
+    
+`
+
+export default function Navigation(props) {
 
     return (
         <Nav>
             <NavCont>
-                <NavItem link="/" name="Home"/>
-                <NavItem link="/myphotos" name="My Photos"/>
+                <NavItem link="/" name="My Photos"/>
+                <NavItem link="/upload" name="Upload Photo" />
+                <NavItem link="/stats" name="Statistics"/>
             </NavCont>
-
+            <ImgCont>
+              <Logo src={require("../../images/pic-metric-logo-gradient.png")} alt="logo" />
+            </ImgCont>
             <NavContR>
-                <Logout/>
+                <Logout props={props}/>
             </NavContR>
         </Nav>
     )

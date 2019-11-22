@@ -1,30 +1,35 @@
-import React from 'react';
-import {Route} from "react-router-dom";
+import React, {useReducer} from 'react';
 
+import {reducer, initialState} from "./reducers/reducers"
+import {AppContext} from "./contexts/contexts"
+
+import PrivateRoute from "./Components/Routes/PrivateRoute/PrivateRoute";
+import PublicRoute from "./Components/Routes/PublicRoute/PublicRoute";
 import Navigation from "./Components/Navigation/Navigation";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import MyPhotos from "./Components/MyPhotos/MyPhotos";
 import Footer from "./Components/Footer/Footer";
+import Upload from "./Components/Upload/Upload"
+
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <Navigation />
+      <AppContext.Provider value={{state, dispatch}}>
+        <PrivateRoute path="/" component={Navigation} />
 
-      <Route path="/login" render={() => {
-        return <Login />
-    }}/>
+        <PublicRoute path="/login" component={Login}/>
 
-      <Route path="/register" render={() => {
-        return <Register />
-    }}/>
+        <PublicRoute path="/register" component={Register}/>
 
-      <Route path="/myphotos" render={() => {
-        return <MyPhotos />
-      }} />
+        <PrivateRoute exact path="/" component={MyPhotos} />
 
-    <Footer />
+        <PrivateRoute path="/upload" component={Upload} />
+
+        <Footer />
+      </AppContext.Provider>
     </div>
   );
 }

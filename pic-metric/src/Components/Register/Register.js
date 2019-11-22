@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 
 const Container = styled.div`
     width: 100%;
@@ -65,33 +67,68 @@ const Button = styled.button`
         width: 35%;
     }
 `
+const Nav = styled.nav`
+    width: 100%;
+    height: 10vh;
+    background-color: #330066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
-export default function Register() {
+const Logo = styled.img`
+    height: 5vw;
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+`
 
-    const usernameHandler = (e) => {
-        setUsername(e.target.value);
+const ImgCont = styled.div`
+    object-fit: contain;
+`
+
+export default function Register(props) {
+
+    const initialState = {
+      username: "",
+      password: ""
+    };
+
+    const [values, setValues] = useState(initialState);
+
+    const changeHandler = (e) => {
+      setValues({
+        ...values,
+        [e.target.name]: e.target.value
+      });
     }
 
-    const passwordHandler = (e) => {
-        setPassword(e.target.value);
+    const handleSubmit = e => {
+      e.preventDefault();
+      axios
+        .post(`https://pic-metric.herokuapp.com/api/auth/register/`, values)
+        .then(res => {console.log(res.data); setValues(initialState); localStorage.setItem('userId', res.data.id); props.history.push("/upload")})
+        .catch(err => console.log(err))
     }
 
     return (
+      <>
+        <Nav>
+          <ImgCont>
+            <Logo src={require("../../images/pic-metric-logo-gradient.png")} alt="logo" />
+          </ImgCont>
+        </Nav>
         <Container>
             <Title>Sign Up</Title>
             
-            <Form>
-                <Label htmlFor="username">Username</Label>
-                <Input type="text" id="username" name="username" placeholder="Username" required onChange={usernameHandler}/>
+            <Form onSubmit={handleSubmit}>
+            <Label htmlFor="username">Username</Label>
+            <Input type="text" id="username" name="username" value={values.username} placeholder="Username" required onChange={changeHandler}/>
 
-                <Label htmlFor="password">Password</Label>
-                <Input type="password" id="password" name="password" placeholder="Password" required onChange={passwordHandler}/>
+            <Label htmlFor="password">Password</Label>
+            <Input type="password" id="password" name="password" value={values.password} placeholder="Password" required onChange={changeHandler}/>
 
-                <Button type="submit">Sign Up</Button>
+            <Button type="submit">Sign Up</Button>
             </Form>
         </Container>
+        </>
     )
 }

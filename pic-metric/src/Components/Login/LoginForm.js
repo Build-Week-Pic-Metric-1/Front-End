@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import axios from "axios"
 import {Link} from "react-router-dom";
+axios.defaults.withCredentials = true;
 
 const Form = styled.form`
     width: 80%;
@@ -59,27 +61,37 @@ const Para = styled.p`
     color: white;
 `
 
-export default function LoginForm() {
+export default function LoginForm(props) {
 
-    const [user, setUser] = useState("");
-    const [pass, setPass] = useState("");
+    const initialState = {
+      username: "",
+      password: ""
+    };
+
+    const [values, setValues] = useState(initialState);
 
     const changeHandler = (e) => {
-        if(e.target.name === "username") {
-            setUser(e.target.value);
-        }
-        else {
-            setPass(e.target.value);
-        }
+      setValues({
+        ...values,
+        [e.target.name]: e.target.value
+      });
+    }
+
+    const handleSubmit = e => {
+      e.preventDefault();
+      axios
+        .post(`https://pic-metric.herokuapp.com/api/auth/login/`, values)
+        .then(res => {console.log(res.data); setValues(initialState); localStorage.setItem('userId', res.data.id); props.props.history.push("/")})
+        .catch(err => console.log(err))
     }
 
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Label htmlFor="username">Username</Label>
-            <Input type="text" id="username" name="username" placeholder="Username" required onChange={changeHandler}/>
+            <Input type="text" id="username" name="username" value={values.username} placeholder="Username" required onChange={changeHandler}/>
 
             <Label htmlFor="password">Password</Label>
-            <Input type="password" id="password" name="password" placeholder="Password" required onChange={changeHandler}/>
+            <Input type="password" id="password" name="password" value={values.password} placeholder="Password" required onChange={changeHandler}/>
 
             <Button type="submit">Login</Button>
 
