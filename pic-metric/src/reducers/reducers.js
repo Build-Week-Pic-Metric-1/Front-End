@@ -3,7 +3,7 @@ axios.defaults.withCredentials = true;
 
 export const initialState = {
   userPhotos: [],
-  user_metrics: [],
+  user_metrics: []
 };
 
 export const reducer = (state, action) => {
@@ -18,16 +18,20 @@ export const reducer = (state, action) => {
       return {
         ...state,
         userPhotos: [
-          ...state.userPhotos.filter(
-            el => el.id !== action.payload.id
-          ),
-          {...state.userPhotos.find(el => el.id === action.payload.id), title: action.payload.title}
+          ...state.userPhotos.filter(el => el.id !== action.payload.id),
+          {
+            ...state.userPhotos.find(el => el.id === action.payload.id),
+            title: action.payload.title
+          }
         ]
       };
-    case "DELETE_PHOTO" :
-      return {...state, userPhotos: state.userPhotos.filter(el => el.id !== action.payload)}
-    case "UPLOAD_PHOTO" :
-      return {...state, userPhotos: [...state.userPhotos, action.payload]}
+    case "DELETE_PHOTO":
+      return {
+        ...state,
+        userPhotos: state.userPhotos.filter(el => el.id !== action.payload)
+      };
+    case "UPLOAD_PHOTO":
+      return { ...state, userPhotos: [...state.userPhotos, action.payload] };
     default:
       return state;
   }

@@ -5,13 +5,13 @@ import NavItem from "./NavItem";
 import Logout from "./Logout";
 
 const Nav = styled.nav`
-    width: 100%;
-    height: 10vh;
-    background-color: #330066;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-`
+  width: 100%;
+  height: 10vh;
+  background-color: #330066;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
 
 const NavCont = styled.div`
     margin: 0;
@@ -20,42 +20,43 @@ const NavCont = styled.div`
     align-items: center;
     justify-content: space-evenly
     width: 30%;
-`
+`;
 
 const NavContR = styled.div`
-    margin: 0 5px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-`
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
 const Logo = styled.img`
-    height: 5vw;
-`
+  height: 5vw;
+`;
 
 const ImgCont = styled.div`
-    margin-left: -15%;
-    object-fit: contain;
-    align-self: center;
-
-    
-`
+  margin-left: -15%;
+  object-fit: contain;
+  align-self: center;
+`;
 
 export default function Navigation(props) {
-
-    return (
-        <Nav>
-            <NavCont>
-                <NavItem link="/" name="My Photos"/>
-                <NavItem link="/upload" name="Upload Photo" />
-                <NavItem link="/stats" name="Statistics"/>
-            </NavCont>
-            <ImgCont>
-              <Logo src={require("../../images/pic-metric-logo-gradient.png")} alt="logo" />
-            </ImgCont>
-            <NavContR>
-                <Logout props={props}/>
-            </NavContR>
-        </Nav>
-    )
+  return (
+    <Nav>
+      <NavCont>
+        <NavItem link="/" name="My Photos" />
+        <NavItem link="/upload" name="Upload Photo" />
+      </NavCont>
+      <ImgCont>
+        <a href="https://build-week-pic-metric-1.github.io/Marketing-Page/">
+          <Logo
+            src={require("../../images/pic-metric-logo-gradient.png")}
+            alt="logo"
+          />
+        </a>
+      </ImgCont>
+      <NavContR>
+        <Logout props={props} />
+      </NavContR>
+    </Nav>
+  );
 }

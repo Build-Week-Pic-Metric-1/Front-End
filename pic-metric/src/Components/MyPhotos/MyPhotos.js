@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { AppContext } from "../../contexts/contexts";
 import { Doughnut } from "react-chartjs-2";
-import SubOverlay from "./SubOverlay"
+import SubOverlay from "./SubOverlay";
 axios.defaults.withCredentials = true;
 
 const Container = styled.div`
@@ -15,8 +15,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  @media (min-width: 767px) {
+  transition: 0.2s ease-in-out @media (min-width: 767px) {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -112,24 +111,26 @@ const TitleInput = styled.input`
 `;
 
 const Button = styled.button`
-    background-color: #ff0033;
-    border-radius: 10px;
-    color: white;
-    border: 1px solid #6633cc;
-    padding: 5px 10px;
+  background-color: #ff0033;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid #6633cc;
+  padding: 5px 10px;
 
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default function MyPhotos() {
   const { state, dispatch } = useContext(AppContext);
 
-  console.log(state)
+  console.log(state);
 
-  const orderedPhotos = [...state.userPhotos]
-  orderedPhotos.sort(function(a, b){return a.id-b.id})
+  const orderedPhotos = [...state.userPhotos];
+  orderedPhotos.sort(function(a, b) {
+    return a.id - b.id;
+  });
 
   const options = {
     legend: {
@@ -140,13 +141,20 @@ export default function MyPhotos() {
   };
 
   useEffect(() => {
-      axios.get(`https://pic-metric.herokuapp.com/api/photos/${localStorage.getItem("userId")}`).then((res) => {
-          console.log(res.data);
-          dispatch({type: "GET_USER_PHOTOS", payload: res.data})
-      }).catch((err) => {
-          console.log(err);
+    axios
+      .get(
+        `https://pic-metric.herokuapp.com/api/photos/${localStorage.getItem(
+          "userId"
+        )}`
+      )
+      .then(res => {
+        console.log(res.data);
+        dispatch({ type: "GET_USER_PHOTOS", payload: res.data });
       })
-  },[])
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   if (state.userPhotos.length === 0) {
     return (
@@ -171,18 +179,14 @@ export default function MyPhotos() {
               <Doughnut
                 className="Chart"
                 data={{
-                  labels: [
-                    el.classification1,
-                    el.classification2,
-                    el.classification3
-                  ],
+                  labels: [el.class1, el.class2, el.class3],
 
                   datasets: [
                     {
                       data: [
-                        el.confidence1 * 100,
-                        el.confidence2 * 100,
-                        el.confidence3 * 100
+                        Number(el.conf1 * 100).toFixed(2),
+                        Number(el.conf2 * 100).toFixed(2),
+                        Number(el.conf3 * 100).toFixed(2)
                       ],
                       backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
                       hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"]
@@ -191,29 +195,7 @@ export default function MyPhotos() {
                 }}
                 options={options}
               />
-              <SubOverlay photo={el} dispatch={dispatch}/>
-              {/* {editing ? (
-                <SubOverlay>
-                  <Button onClick={() => setEditing(!editing)}>Cancel</Button>
-                  <TitleInput
-                    type="text"
-                    value={newTitle}
-                    placeholder="New Title"
-                    onChange={handleChange}
-                  />
-                  <Button onClick={handleEditSubmit}>Submit</Button>
-                </SubOverlay>
-              ) : (
-                <SubOverlay>
-                  <Button onClick={() => setEditing(!editing)}>
-                    Edit Title
-                  </Button>
-                  <PhotoTitle>{el.title}</PhotoTitle>
-                  <Button onClick={() => handleDelete(el.id)}>
-                    Delete Photo
-                  </Button>
-                </SubOverlay>
-              )} */}
+              <SubOverlay photo={el} dispatch={dispatch} />
             </Overlay>
           </ImageCont>
         );
